@@ -1,20 +1,20 @@
 import React from 'react';
+import {BrowserRouter} from 'react-router-dom'
+import Routes from './routes'
 
-import Landing from './Pages/Landing'
-import CreateLetter from './Pages/CreateLetter'
 
 import GlobalStyle from './style/global'
 
 import Snowfall from 'react-snowfall'
 function App() {
   return (
-    <>
-      <CreateLetter />
+    <BrowserRouter>
+      <Routes />
       <GlobalStyle />
       <Snowfall
         snowflakeCount={10}
       />
-    </>
+    </BrowserRouter>
   );
 }
 

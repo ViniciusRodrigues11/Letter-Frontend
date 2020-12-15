@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-
+import bg from '../../assets/images/bg.jpg'
 
 export const Container = styled.div`
-    background: linear-gradient(257deg, rgba(200,33,0,1) 1%, rgba(255,120,127,1) 23%, rgba(254,108,131,1) 73%, rgba(255,51,63,1) 96%, rgba(205,0,60,1) 100%);
+    background-image: url(${bg});
+    background-size: cover;
     flex: 1;
     width: 100vw;
     height: 100vh;
@@ -21,15 +22,15 @@ export const Container = styled.div`
 
 export const FormBox = styled.form`
     width: 40vw;
+    min-height: 80vh;
     min-width: 350px;
-    height: 80vh;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     background: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 40px;
+    padding: 40px;
 
     h1{
         font-weight: 400;
@@ -82,7 +83,7 @@ export const FormBox = styled.form`
             font-family: Roboto Mono;
             font-style: normal;
             font-weight: 500;
-            font-size: 18px;
+            font-size: 14px;
             line-height: 24px;
             color: #C2C2C2;
         }
@@ -92,6 +93,7 @@ export const FormBox = styled.form`
     textarea{
         min-width: 30vw;
         max-width: 30vw;
+        max-height: 25vh;
         background: #F5F5F5;
         border: 1px solid #BBBBBB;
         box-sizing: border-box;
@@ -107,7 +109,7 @@ export const FormBox = styled.form`
             text-align: center;
             font-style: normal;
             font-weight: 500;
-            font-size: 18px;
+            font-size: 14px;
             line-height: 24px;
             color: #C2C2C2;
             transform: translateY(75px)
@@ -129,6 +131,7 @@ export const FormBox = styled.form`
             width: 90vw;
             max-width: 90vw;
             min-width: 90vw;
+            
          } 
          textarea::placeholder{
            transform: translateY(70px);
@@ -169,9 +172,7 @@ export const Preview = styled.div`
         justify-content: space-between;
 
         #msg{
-            text-align:justify;
-            transform: translateY(-15vh);
-        
+            text-align:justify;        
         }
         #rmt{
             text-align: right;
@@ -190,4 +191,16 @@ export const Preview = styled.div`
     }
   
 
+`;
+
+export const LetterLink = styled.div`
+    max-width: 400px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a{
+        color: red;
+    }
 `;

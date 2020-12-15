@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-
+import React, { useState, FormEvent } from 'react'
+import { Link } from 'react-router-dom'
 import Lottie from 'react-lottie';
 import bells from '../../assets/lottieFiles/bells.json'
+import api from '../../services/api'
 
-
-
-import { Container, FormBox, Preview } from './styles'
+import { Container, FormBox, Preview, LetterLink } from './styles'
 
 const CreateLetter = () => {
 
     const [dest, setDest] = useState('')
     const [msg, setMsg] = useState('')
     const [rmt, setRmt] = useState('')
+    const [link, setLink] = useState('')
 
     const defaultOptions = {
         loop: true,
@@ -22,11 +22,24 @@ const CreateLetter = () => {
         }
     };
 
+    async function handleSubmit(event: FormEvent) {
+        event.preventDefault()
+        if (dest !== '' && msg !== '' && rmt !== '') {
+            const data = {
+                destinatario: dest,
+                msg,
+                remetente: rmt
+            }
+            const response = await api.post('/letter', data);
+
+            setLink(`letter/${response.data.id}`)
+        }
+    }
+
     return (
         <>
-            
             <Container>
-                <FormBox onSubmit={() => { console.log('hello') }}>
+                <FormBox onSubmit={handleSubmit}>
                     <h1>Vamos criar sua carta...</h1>
                     <div>
                         <label htmlFor="destinatario">Destinatário</label>
@@ -40,10 +53,16 @@ const CreateLetter = () => {
                         <label htmlFor="remetente">Remetente</label>
                         <input type="text" onChange={(e) => setRmt(e.target.value)} id="remetente" placeholder="Seu nome ou apelido" />
                     </div>
-
                     <input type="submit" value="Criar carta" />
-                </FormBox>
 
+                    {link !== '' && (
+                    <LetterLink>
+                        <Link to={link}>CLique aqui para ver a carta!</Link>
+                    </LetterLink>
+                    )}
+
+
+                </FormBox>
                 <Preview>
                     <Lottie
                         options={defaultOptions}

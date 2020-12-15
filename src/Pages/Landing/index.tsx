@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from './styles'
 import LandingImg from '../../assets/images/landing.svg'
-
+import { Link } from 'react-router-dom'
 
 const Landing = () => {
     return (
@@ -9,13 +9,11 @@ const Landing = () => {
             <Container>
                 <div>
                     <h1>Letter</h1>
-                    <p>Poucas palavras espalham amor</p>
-                    <a href="/">Escrever uma carta</a>
+                    <p>Palavras que espalham amor</p>
+                    <Link to="/create">Escrever uma carta</Link>
                 </div>
-                <img src={LandingImg} alt="" />
-
+                <img src={LandingImg} alt="letter" />
             </Container>
-
         </>
     );
 }
