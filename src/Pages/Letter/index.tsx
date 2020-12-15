@@ -42,17 +42,10 @@ const Letter = () => {
     const { params } = useRouteMatch<LetterParams>();
 
     useEffect(() => {
-
         api.get(`/letter/${params.id}`).then(response => {
-            setTimeout(() => {
-                setData(response.data)
-            }, 3000)
+            setData(response.data)
         })
-
-
     }, [params.id])
-
-
 
     if (data == null) {
         return (
@@ -71,8 +64,6 @@ const Letter = () => {
     return (
         <Container>
             <LetterBox>
-
-
                 <Lottie
                     options={bellsLottie}
                     height={150}
