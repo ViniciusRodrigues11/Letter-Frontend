@@ -14,7 +14,19 @@
 
 ---
 
-👨‍💻 Tecnologias:
+<h4>
+   ⚙ Descrição do projeto
+</h4>  
+
+<p>Letter é um sistema bem simples construído com Node.js e React.js, em ambos foi utilizado typescript.
+Em resumo, o sistema possíbilita a criação de uma carta de natal virtual, cada carta gerada cria um link que torna ela disponível
+e compartilhavel.
+</p>
+
+
+<h4>
+   👨‍💻 Tecnologias:
+</h4>  
   <ul>
   <li>
     <p>React.js</p>
