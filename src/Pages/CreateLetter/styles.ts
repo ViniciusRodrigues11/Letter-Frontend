@@ -204,3 +204,21 @@ export const LetterLink = styled.div`
         color: red;
     }
 `;
+
+export const Loading = styled.div`
+    background-color: #cc0404;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Indie Flower', cursive;
+    
+    p{
+        color: #fff;
+        font-size: 24px;
+        letter-spacing: 4px;
+    }
+
+`;

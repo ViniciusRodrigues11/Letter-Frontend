@@ -42,8 +42,11 @@ const Letter = () => {
     const { params } = useRouteMatch<LetterParams>();
 
     useEffect(() => {
+
         api.get(`/letter/${params.id}`).then(response => {
-            setData(response.data)
+            setTimeout(() => {
+                setData(response.data)
+            }, 2000)
         })
     }, [params.id])
 
