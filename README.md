@@ -12,4 +12,4 @@
   
 
 
-<img src="/github/letter.png"/>
+<img src="/github/letter.svg"/>
